@@ -35,6 +35,16 @@ public class Service implements IService
     }
 
     /**
+     * Overloaded constructor for wiring repository bean.
+     *
+     * @param repository - instance of {@link IRepository}.
+     */
+    public Service(final IRepository repository)
+    {
+        this.repository = repository;
+    }
+
+    /**
      * {@inheritDoc}
      *
      * @return List - the data objects.

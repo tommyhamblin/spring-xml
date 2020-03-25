@@ -24,7 +24,7 @@
     <bean name="repository" class="com.spring.testbed.repository.Repository"/>
 
     <bean name="service" class="com.spring.testbed.service.Service">
-        <property name="repository" ref="repository"/>
+        <constructor-arg index="0" ref="repository"/>
     </bean>
 
 </beans>

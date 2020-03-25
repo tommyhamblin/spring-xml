@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-import com.spring.testbed.service.IService;
 import com.spring.testbed.service.Service;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
