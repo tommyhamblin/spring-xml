@@ -18,14 +18,13 @@ package com.spring.testbed.service;
 
 import com.spring.testbed.model.DataObject;
 import com.spring.testbed.repository.IRepository;
-import com.spring.testbed.repository.Repository;
 
 import java.util.List;
 
 public class Service implements IService
 {
     /** Instance of {@link IRepository}. */
-    private IRepository repository = new Repository();
+    private IRepository repository;
 
     /**
      * Default constructor.
@@ -44,5 +43,15 @@ public class Service implements IService
     public List<DataObject> retrieveData()
     {
         return repository.getAll();
+    }
+
+    /**
+     * Wires in the repository property found in the application context service bean.
+     *
+     * @param repository - instance of {@link IRepository}
+     */
+    public void setRepository(final IRepository repository)
+    {
+        this.repository = repository;
     }
 }

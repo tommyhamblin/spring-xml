@@ -16,6 +16,8 @@
 
 import com.spring.testbed.service.IService;
 import com.spring.testbed.service.Service;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * The runner class for the application.
@@ -29,7 +31,10 @@ public class Application
      */
     public static void main(final String[] args)
     {
-        IService service = new Service();
+        ApplicationContext appContext =
+                new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        Service service = appContext.getBean("service", Service.class);
         System.out.println(service.retrieveData().get(0).getFirstVariable());
     }
 }
