@@ -21,10 +21,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!-- Should match the setter if autowiring by name. -->
     <bean name="repository" class="com.spring.testbed.repository.Repository"/>
 
-    <bean name="service" class="com.spring.testbed.service.Service">
-        <constructor-arg index="0" ref="repository"/>
-    </bean>
+    <!-- Equivalent to auto-wired annotation on service constructor. -->
+    <!-- Auto-wire by type is default option. -->
+    <bean name="service" class="com.spring.testbed.service.Service" autowire="byName"/>
 
 </beans>
